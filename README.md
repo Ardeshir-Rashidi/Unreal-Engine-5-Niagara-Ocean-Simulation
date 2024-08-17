@@ -127,6 +127,8 @@ Finally, consider adding mechanisms to seamlessly change wind speed and directio
 >   
 >      - Select the `Custom HLSL Expression` node.
 >      - In the Details panel, find the `Absolute Include File Paths` entry.
+>      - Click the `...` button next to this entry.
+>      - Browse to `OceanSimulation\Content\OceanSystem\OceanWater` and select the `OceanExport.ush` file.
 >     
 >After adjusting these paths, the custom HLSL expressions should properly reference the necessary shader files, allowing you to use the sample files effectively in your Niagara setup.
 
@@ -135,9 +137,9 @@ Finally, consider adding mechanisms to seamlessly change wind speed and directio
 <br/>
 
 > [!IMPORTANT]
+> ### Usage Instructions for the Ocean_Water Material in Different Levels
 > Make sure to include the `FX_OceanWater` file located at `OceanSimulation\Content\OceanSystem\OceanWater\Effects` in your levels. If this file is not included, the material will not display animations correctly.
-> - Click the `...` button next to this entry.
-> - Browse to `OceanSimulation\Content\OceanSystem\OceanWater` and select the `OceanExport.ush` file.
+
 
 
 
