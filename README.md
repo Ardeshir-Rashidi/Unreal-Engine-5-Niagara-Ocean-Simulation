@@ -13,7 +13,7 @@ Ocean Simulation
 <br/>
 
 > [!NOTE]
-> The `Guide` folder contains images for the `readme.md` file only. You can delete this folder after downloading the files and use the `OceanSimulation` folder to launch the project.
+> The `Guide` folder contains images for the `README.md` file only. You can delete this folder after downloading the files and use the `OceanSimulation` folder to launch the project.
 
 <br/>
 
