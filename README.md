@@ -3,26 +3,31 @@ Ocean Simulation
 </h1>
 
 <p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/7751cda91737f3bdbbaa0ccc402e425ac2b37cad/OceanSimulation/Cover.png" alt="Ocean Simulation Unreal Engine 5">
+"This file was developed in Unreal Engine 5.4 and performs best on this version."
 </p>
 
 <p align="center">
-"This file was developed in Unreal Engine 5.4 and performs best on this version."
+  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/7751cda91737f3bdbbaa0ccc402e425ac2b37cad/OceanSimulation/Cover.png" alt="Ocean Simulation Unreal Engine 5">
 </p>
+
+<br/>
+
+> [!NOTE]
+> The `guide` folder contains images for the `readme.md` file only. You can delete this folder after downloading the files and use the `OceanSimulation` folder to launch the project.
 
 <br/>
 
 ## [Overview]()
 
-Rendering a realistic ocean surface has been a longstanding challenge in real-time rendering. While the concept is simple—summing a few wave signals—the reality requires handling thousands of wave signals simultaneously.
+Rendering a realistic ocean surface has been a longstanding challenge in real-time rendering. While the concept is simple - summing a few wave signals - the reality requires handling thousands of wave signals simultaneously.
 
 Traditionally, ocean surfaces were created by panning textures across a surface, a technique that, while still viable, lacks realism. As hardware evolved, the advent of flexible, programmable vertex, and pixel shaders enabled the evaluation of wave sums directly in shaders. However, even today, processing more than 30 wave signals directly in a shader is impractical.
 
-This challenge spurred the development of various techniques, one of which involves rendering waves into a texture every frame and then using that texture in the water shader. Although this method improves performance, it doesn't fully capture the complexity of thousands of waves. The solution lies in generating a texture every frame where each texel represents a discrete ocean height. For example, a modest 256x256 texture with 30 waves requires evaluating a sine function 1,966,080 times per frame—a significant load, even for a GPU.
+This challenge spurred the development of various techniques, one of which involves rendering waves into a texture every frame and then using that texture in the water shader. Although this method improves performance, it doesn't fully capture the complexity of thousands of waves. The solution lies in generating a texture every frame where each texel represents a discrete ocean height. For example, a modest 256x256 texture with 30 waves requires evaluating a sine function 1,966,080 times per frame - a significant load, even for a GPU.
 
 The key to optimizing this process is recognizing that the waves need not be entirely arbitrary. For instance, a sine wave traveling horizontally across the texture only requires 256 evaluations. If another wave has half the wavelength, many points can be reused between the two waves. This repetition on a discrete grid forms the basis for speeding up the process.
 
-The Fast Fourier Transform (FFT) leverages this property. Without delving into the math, it's essential to understand that any signal can be decomposed into sines and cosines. In our case, the height texture represents a spatial domain—height across space. However, this data can also be represented as a set of amplitudes and phases varying over frequency—known as the frequency domain.
+The Fast Fourier Transform (FFT) leverages this property. Without delving into the math, it's essential to understand that any signal can be decomposed into sines and cosines. In our case, the height texture represents a spatial domain—height across space. However, this data can also be represented as a set of amplitudes and phases varying over frequency - known as the frequency domain.
 
 Fourier Transform converts between these domains: forward transform from spatial to frequency domain, and inverse transform from frequency to spatial. The Fast Fourier Transform (FFT) is an optimized version of this operation.
 
