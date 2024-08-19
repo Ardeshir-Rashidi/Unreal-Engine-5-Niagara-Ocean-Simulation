@@ -12,6 +12,11 @@ Ocean Simulation
 
 <br/>
 
+### Video Preview:
+> https://www.youtube.com/watch?v=Xhm2Syyu3fo
+
+<br/>
+
 > [!NOTE]
 > The `Guide` folder contains images for the `README.md` file only. You can delete this folder after downloading the files and use the `OceanSimulation` folder to launch the project.
 
@@ -175,8 +180,3 @@ Finally, consider adding mechanisms to seamlessly change wind speed and directio
 > [!IMPORTANT]
 > ### Usage Instructions for the Ocean_Water Material in Different Levels
 > Make sure to include the `FX_OceanWater` file located at `OceanSimulation\Content\OceanSystem\OceanWater\Effects` in your levels. If this file is not included, the material will not display animations correctly.
-
-
-
-
-
