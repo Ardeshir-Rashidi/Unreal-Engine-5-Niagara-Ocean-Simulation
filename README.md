@@ -1,28 +1,36 @@
-<h1 align="center">
-Ocean Simulation
-</h1>
+# Niagara Ocean Simulation
 
-<p align="center">
-"This file was developed in Unreal Engine 5.4 and performs best on this version."
-</p>
+FFT-based ocean simulation and real-time water rendering in Unreal Engine, using Niagara and custom HLSL. This repository includes the sample project and a guide to the simulation parameters and shader setup.
 
-<p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/7751cda91737f3bdbbaa0ccc402e425ac2b37cad/OceanSimulation/Cover.png" alt="Ocean Simulation Unreal Engine 5">
-</p>
+**Category:** Game systems and real-time simulation  
+**Tested engine:** Unreal Engine 5.4  
+**Main project:** [`OceanSimulation/OceanSimulation.uproject`](OceanSimulation/OceanSimulation.uproject)
 
-<br/>
+[Video preview](https://www.youtube.com/watch?v=Xhm2Syyu3fo) · [Sample release](https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Niagara-Ocean-Simulation/releases/tag/File) · [Shader setup](#how-to-use-the-sample-files)
 
-### Video Preview:
-> https://www.youtube.com/watch?v=Xhm2Syyu3fo
+![Niagara ocean simulation preview](OceanSimulation/Cover.png)
 
-<br/>
+## Start here
+
+- Open the sample project with Unreal Engine 5.4.
+- Update the Niagara modules' absolute HLSL include paths as described in [How to Use the Sample Files](#how-to-use-the-sample-files).
+- Include `FX_OceanWater` in the level so the water material animates correctly.
+- Explore the wave, foam, and roughness controls documented below.
+
+## Repository structure
+
+| Path | Purpose |
+| --- | --- |
+| `OceanSimulation/` | Unreal project, configuration, and simulation assets |
+| `Guide/` | Documentation images |
+| `README.md` | Technical overview, parameter guide, and setup instructions |
 
 > [!NOTE]
 > The `Guide` folder contains images for the `README.md` file only. You can delete this folder after downloading the files and use the `OceanSimulation` folder to launch the project.
 
 <br/>
 
-## [Overview]()
+## Overview
 
 Rendering a realistic ocean surface has been a longstanding challenge in real-time rendering. While the concept is simple - summing a few wave signals - the reality requires handling thousands of wave signals simultaneously.
 
@@ -48,10 +56,10 @@ Now, let's move on to the next step: creating and setting up the Niagara system.
 
 <br/>
 
-## [Parameter Exploration]()
+## Parameter Exploration
 
 <p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/main/Guide/PercascadeParams.png?raw=true">
+  <img src="Guide/PercascadeParams.png">
 </p>
 
 - #### WindDirectionality
@@ -80,7 +88,7 @@ Increasing **WindTighten** suppresses waves traveling perpendicular to the wind 
 <hr>
 
 <p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/main/Guide/WindControl.png?raw=true">
+  <img src="Guide/WindControl.png">
 </p>
 
 - #### RepeatPeriod
@@ -89,7 +97,7 @@ The **RepeatPeriod** parameter manages precision issues that arise during iFFT c
 <hr>
 
 <p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/main/Guide/PercascadeFoamParams.png?raw=true">
+  <img src="Guide/PercascadeFoamParams.png">
 </p>
 
 - #### Foam Parameters
@@ -101,7 +109,7 @@ The **RepeatPeriod** parameter manages precision issues that arise during iFFT c
 <hr>
 
 <p align="center">
-  <img src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/main/Guide/RoughnessParams.png?raw=true">
+  <img src="Guide/RoughnessParams.png">
 </p>
 
 - #### Roughness Parameters
@@ -110,7 +118,7 @@ The **RepeatPeriod** parameter manages precision issues that arise during iFFT c
 
 <br/>
 
-## [NiagaraOceanSystem: Closing Notes and Further Improvements]()
+## NiagaraOceanSystem: Closing Notes and Further Improvements
 
 What has been presented is a rough outline that doesn’t need to be followed strictly. There is significant room for optimization and customization:
 
@@ -169,7 +177,7 @@ Finally, consider adding mechanisms to seamlessly change wind speed and directio
 
 <br/>
 
-<img align="center" src="https://github.com/Ardeshir-Rashidi/Unreal-Engine-5-Ocean-Simulation/blob/main/Guide/Sample%20Files.png?raw=true" alt="Add .ush files to unreal engine 5">
+<img align="center" src="Guide/Sample%20Files.png" alt="Add .ush files to unreal engine 5">
 <p align="center">
   How to Use the Sample Files
 </p>
